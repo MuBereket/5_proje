@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace odev5
 {
@@ -26,7 +27,17 @@ namespace odev5
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            if (dataGridView1.Rows[index].Cells[34].Value.ToString() == "İade edilen ürün") {
+                MessageBox.Show("Ödeledi");
+            }
+            else { 
+            writer2.guncell(reader2.ara(textBox1.Text), 2);
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
+            textBox4.Text = "";
+            MessageBox.Show("Ödeme yapıldı");
+            }
         }
 
         private void Home_Load(object sender, EventArgs e)
@@ -36,8 +47,9 @@ namespace odev5
             {
                 DateTime d = Convert.ToDateTime(reader1.tarih[i]);
                 TimeSpan difference = DateTime.Now - d;
-              
-                int Gunsayisi = difference.Days+1;
+
+                int Gunsayisi = difference.Days + 1;
+                
 
                 int toplamaUcert = Gunsayisi * Convert.ToInt32(reader1.GnulukUcert[i]);
 
@@ -47,6 +59,18 @@ namespace odev5
 
             }
 
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
+            {
+                index = e.RowIndex;
+                textBox1.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                textBox2.Text = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+                textBox3.Text = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+                textBox4.Text = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
+            }
         }
     }
 }
