@@ -27,7 +27,7 @@ namespace odev5
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.Rows[index].Cells[34].Value.ToString() == "İade edilen ürün") {
+            if (dataGridView1.Rows[index].Cells[4].Value.ToString() == "İade edilen ürün") {
                 MessageBox.Show("Ödeledi");
             }
             else { 

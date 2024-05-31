@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace odev5
 {
-    internal class ReadKisi : IReadFile
+    internal class ReadKisi : Read
     {
         List<string> FilmAdi;
         List<string> KisiAdi;
@@ -14,7 +14,7 @@ namespace odev5
         List<string> gnulukUcert;
         List<string> Tarih;
         List<string> KiraMi;
-        public ReadKisi(string isim)
+        public ReadKisi(string isim) : base(isim)
         {
             //İşte dosya yolu
             path = @"DateBase\";

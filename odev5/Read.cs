@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace odev5
 {
-    internal interface IReadFile
+    public class Read
     {
+        public Read(string isim) { }
+
         string path { get; set; }
         StreamReader sr { get; set; }
         string[] kume { get; set; }
-        public int ara(String str)
-        {
-            return 0;
-        }
-
+       
     }
 }

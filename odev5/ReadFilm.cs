@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace odev5
 {
-    public class ReadFilm:IReadFile
+    public class ReadFilm:Read
     {
         public string path { get; set; }
         public StreamReader sr { get; set; }
@@ -22,7 +22,7 @@ namespace odev5
 
 
         //Bu Yapıcı, Kitaplar dosyasındaki verileri alır
-        public ReadFilm( string isim)
+        public ReadFilm( string isim):base(isim)
         {
             //İşte dosya yolu
             path = @"DateBase\";
@@ -66,6 +66,7 @@ namespace odev5
         public List<string> Film_dili { get => FilmDili; set => FilmDili = value; }
         public List<string> Yas_sinir { get => YasSinir; set => YasSinir = value; }
         public List<string> durum { get => Durum; set => Durum = value; }
+
 
         public int ara(String str)
         {

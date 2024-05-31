@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace odev5
 {
-    public class WriteFilm : IWriteFile
+    public class WriteFilm : Write
     {
         //Bu sınıfın işlevi depolama yapmaktır
         //ya silin yada ekleyin
@@ -21,7 +21,7 @@ namespace odev5
 
         ReadFilm reader;
 
-        public WriteFilm(string isim)
+        public WriteFilm(string isim) :base(isim)
         {
             this.varmi = false;
             //Bu Oluşturucunun işlevi, verileri getirme yolunu tanımlamaktır.

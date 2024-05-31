@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace odev5
 {
-    internal class WriteKisi : IWriteFile
+    internal class WriteKisi : Write
     {
         public string cs { get; set; }
         public string isim { get; set; }
@@ -14,7 +14,7 @@ namespace odev5
         public StreamWriter sw { get; set; }
         public bool varmi { get; set; }
         ReadKisi reader;
-       public WriteKisi(String isim)
+       public WriteKisi(String isim): base(isim)
         {
             this.varmi = false;
             //Bu Oluşturucunun işlevi, verileri getirme yolunu tanımlamaktır.

@@ -44,9 +44,7 @@ namespace odev5
                     writer2.guncell(i,1);
                     dataGridView1.Rows.Add(comboBox1.Text, textBox2.Text, textBox1.Text, DateTime.Now, textBox3.Text);
                     dataGridView1.Refresh();
-                    textBox3.Text = "";
-                    textBox1.Text = "";
-                    textBox2.Text = "";
+                    clearboxes();
                     MessageBox.Show("Ekledi");
                 }
                 else
@@ -95,14 +93,17 @@ namespace odev5
                 row.Cells[4].Value = textBox3.Text;
                 dataGridView1.Refresh();
 
-                textBox3.Text = "";
-                textBox1.Text = "";
-                textBox2.Text = "";
+                clearboxes();
                 MessageBox.Show("güncelldi");
             }
 
         }
 
+        void clearboxes() {
+            textBox3.Text = "";
+            textBox1.Text = "";
+            textBox2.Text = "";
+        }
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox3.Text == "" || textBox1.Text == "" || textBox2.Text == "")
@@ -116,9 +117,7 @@ namespace odev5
                 writer.sil(comboBox1.Text);
                 dataGridView1.Rows.RemoveAt(index);
                 dataGridView1.Refresh();
-                textBox3.Text = "";
-                textBox1.Text = "";
-                textBox2.Text = "";
+                clearboxes();
                 MessageBox.Show("Sildi");
                 reader2= new ReadFilm("Filmler"); 
             }

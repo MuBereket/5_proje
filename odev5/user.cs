@@ -89,12 +89,16 @@ namespace odev5
                 writer.ekle(textBox3.Text, comboBox1.Text, comboBox2.Text, textBox4.Text, textBox5.Text);
                 dataGridView1.Rows.Add(textBox3.Text, comboBox1.Text, comboBox2.Text, textBox4.Text, textBox5.Text);
                 dataGridView1.Refresh();
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
+                clearboxes();
                 MessageBox.Show("Ekledi");
             }
 
+        }
+
+        void clearboxes() {
+            textBox3.Text = "";
+            textBox4.Text = "";
+            textBox5.Text = "";
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -116,9 +120,7 @@ namespace odev5
                 row.Cells[4].Value = textBox5.Text;
                 dataGridView1.Refresh();
 
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
+                clearboxes();
                 MessageBox.Show("güncelldi");
             }
         }
@@ -134,9 +136,7 @@ namespace odev5
                 writer.sil(textBox3.Text);
                 dataGridView1.Rows.RemoveAt(index);
                 dataGridView1.Refresh();
-                textBox3.Text = "";
-                textBox4.Text = "";
-                textBox5.Text = "";
+                clearboxes();
                 MessageBox.Show("Sildi");
             }
 
